@@ -1,5 +1,5 @@
 public class Node {
-	public Point data;
+	public Object data;
 	public int id;
 	public Node next;
 }

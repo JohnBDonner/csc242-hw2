@@ -1,10 +1,12 @@
-
+import java.io.*;
 
 public class Problem5 {
 	public static void main(String[] args) {
+		LinkedList train, tune, test;
 
-		set_train = read("train_86_by_71.txt");
-		set_tune = read("tune_20_by_71.txt");
+		train = read("train_86_by_71.txt");
+		train.printList();
+		tune = read("tune_20_by_71.txt");
 		
 	}
 
@@ -21,9 +23,13 @@ public class Problem5 {
 	            sb.append(System.lineSeparator());
 	            line = br.readLine();
 	            if (line != null) {
-	            	String[] stringSeparated = line.split("\\s+");
-	            	Point point = new Point(Double.parseDouble(stringSeparated[0]), Double.parseDouble(stringSeparated[1]));
-	            	dataset.insert(point);
+	            	String[] stringSeparated = line.split("\\t");
+	            	// Point point = new Point(Double.parseDouble(stringSeparated[0]), Double.parseDouble(stringSeparated[1]));
+	            	for (int i = 0; i < stringSeparated.length; i++) {
+	            		// Need to separate the author from the data.
+	            		// Perhaps use an object to distinguish between the two.
+	            		dataset.insert(stringSeparated[i]);
+	            	}
 	            	n++;
 	            	// System.out.println("line " + n + ": " + point.toString());
 	            }

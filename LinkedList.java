@@ -9,7 +9,7 @@ public class LinkedList {
 	}
 	
 	// n^3 time
-	public void insert(Point x){
+	public void insert(Object x){
 		if (!lookup(x)){
 			Node newNode = new Node();
 			newNode.data = x;
@@ -28,7 +28,7 @@ public class LinkedList {
 	}
 	
 	// n^2 time
-	public void delete(Point x){
+	public void delete(Object x){
 		Node current = first, previous = first;
 		while (current != null){
 			if (current.data == x && current == first){
@@ -61,7 +61,7 @@ public class LinkedList {
 	}
 	
 	// n^2 time
-	public boolean lookup(Point x){
+	public boolean lookup(Object x){
 		Node current = first;
 		while (current != null){
 			if (current.data == x)
@@ -83,7 +83,7 @@ public class LinkedList {
 	}
 
 	// n time
-	public Point extract(int id) {
+	public Object extract(int id) {
 		Node current = first;
 		while (current != null){
 			if (current.id == id)
