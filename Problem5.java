@@ -1,11 +1,18 @@
 import java.io.*;
+import java.util.*;
 
 public class Problem5 {
+	private int k;
+	private ArrayList<Object> classes;
+	private ArrayList<DataEntry> dataSet;
+
 	public static void main(String[] args) {
-		LinkedList train, tune, test, samples;
+		ArrayList<Paper> train, tune, test, samples;
 
 		train = read("train_86_by_71.txt");
-		train.printList();
+		for (Paper p : train) {
+			System.out.println(p.getFreq()[0]);
+		}
 		//tune = read("tune_20_by_71.txt");
 		
 	}
@@ -20,8 +27,8 @@ public class Problem5 {
 		return Math.sqrt(distance);
 	}
 
-	public static LinkedList read(String file) {
-		LinkedList dataset = new LinkedList();
+	public static ArrayList<Paper> read(String file) {
+		ArrayList<Paper> dataset = new ArrayList<Paper>();
 		try(BufferedReader br = new BufferedReader(new FileReader(file))) {
 	        StringBuilder sb = new StringBuilder();
 	        String line = "";// = br.readLine();
@@ -43,7 +50,7 @@ public class Problem5 {
 	            		if (i != 0) freq[i-1] = Double.parseDouble(stringSeparated[i]);
 	            	}
 	            	Paper paper = new Paper(author, freq);
-	            	dataset.insert(paper);
+	            	dataset.add(paper);
 	            	n++;
 	            	// System.out.println("line " + n + ": " + point.toString());
 	            }

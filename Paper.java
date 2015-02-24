@@ -11,11 +11,6 @@ public class Paper {
 		this.freq = freq;
 	}
 
-	public Paper() {
-		x = 0;
-		y = 0;
-	}
-
 	public Object getAuthor() {
 		return author;
 	}
