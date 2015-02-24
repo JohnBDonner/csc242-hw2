@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Problem5 {
+public class Problem6 {
 	private int k;
 	private ArrayList<Object> classes;
 	private ArrayList<Paper> dataSet;
@@ -17,7 +17,7 @@ public class Problem5 {
 			System.out.println(p.getFreq()[0]);
 		}
 
-		Problem5 nn = new Problem5(train, 3);
+		Problem6 nn = new Problem6(train, 3);
 
 		// This print statement is for the test data
 		//System.out.println("Classified as: "+nn.classify(new Paper(new double[]{170, 60},"Ignore")));
@@ -43,7 +43,7 @@ public class Problem5 {
 		}
 	}
 
-	public Problem5(ArrayList<Paper> dataSet, int k){
+	public Problem6(ArrayList<Paper> dataSet, int k){
 		this.classes = new ArrayList<Object>();
 		this.k = k;
 		this.dataSet = dataSet;
@@ -112,7 +112,7 @@ public class Problem5 {
 		HashMap<Object,Double> classcount = new HashMap<Object,Double>();
 		Paper[] de = this.getNearestNeighbourType(e);
 		for(int i = 0; i < de.length; i++){
-			double distance = Problem5.convertDistance(Problem5.distance(de[i], e));
+			double distance = Problem6.convertDistance(Problem6.distance(de[i], e));
 			if(!classcount.containsKey(de[i].getAuthor())){
 				classcount.put(de[i].getAuthor(), distance);
 			}
