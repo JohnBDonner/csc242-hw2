@@ -1,11 +1,13 @@
 public class Paper {
-	double author;
+	Object author;
 	// Might need to store freq as binary tree, not array of doubles....
 	double[] freq;
 	// int id, cluster;
 
 	public Paper(double author, double[] freq) {
-		this.author = author;
+		if (author == 1) this.author = "Hamilton";
+		else if (author == 2) this.author = "Madison";
+		else this.author = "[Name_Nan]";
 		this.freq = freq;
 	}
 
@@ -14,25 +16,25 @@ public class Paper {
 		y = 0;
 	}
 
-	public double getAuthor() {
+	public Object getAuthor() {
 		return author;
 	}
 
-	public string getAuthorName() {
-		if (author == 1) return "Hamilton";
-		if (author == 2) return "Madison";
-		return "[Name_NaN]";
-	}
-
-	public double[] getfreq() {
+	public double[] getFreq() {
 		return freq;
 	}
 
 	public void setAuthor(double author) {
-		this.author = author;
+		if (author == 1) this.author = "Hamilton";
+		else if (author == 2) this.author = "Madison";
+		else this.author = "[Name_Nan]";
 	}
 
 	public void setFreq(double[] freq) {
 		this.freq = freq;
+	}
+
+	public String toString() {
+		return author + " " + freq.length;
 	}
 }
